@@ -1,0 +1,16 @@
+{
+  "name": "package",
+  "version": "0.0.1",
+  "description": "A simple content scraper.",
+  "main": "scraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lan Prijatelj",
+  "license": "ISC",
+  "dependencies": {
+    "fast-csv": "^2.4.0",
+    "moment": "^2.17.1",
+    "simplecrawler": "^1.0.5"
+  }
+}
