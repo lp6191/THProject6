@@ -13,9 +13,9 @@ if(!fs.existsSync(dir)){
 }
 
 //variables used in the program.
-var data = [];
+var data = ["Title", "Price", "ImageURL", "URL", "Time", "\n"];
 var buffered_data = "";
-var date = moment().format('YYYY MM DD');
+var date = moment().format('YYYY-MM-DD');
 var price = "";
 var title = "";
 var url = "";
@@ -68,7 +68,7 @@ crawler.on("fetchcomplete", function(queueItem, responseBuffer, response) {
 //when the scraping is complete and if there's any returned data, write it to file.
 crawler.on("complete", function(){
   if(data.length > 0){
-    csv.writeToPath("./data/" + date + ".csv", [data]).on("finish", function(){
+    csv.writeToPath("./data/" + date + ".csv", [data], {headers: true}).on("finish", function(){
       console.log("done writing to file!");
     });
   }
