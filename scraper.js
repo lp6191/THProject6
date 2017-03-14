@@ -13,7 +13,7 @@ if(!fs.existsSync(dir)){
 }
 
 //variables used in the program.
-var data = ["Title", "Price", "ImageURL", "URL", "Time", "\n"];
+var data = [["Title:", "Price:", "ImageURL:", "URL:", "Time:"]];
 var buffered_data = "";
 var date = moment().format('YYYY-MM-DD');
 var price = "";
@@ -51,7 +51,7 @@ crawler.on("fetchcomplete", function(queueItem, responseBuffer, response) {
       img_url = "http://www.shirts4mike.com/img/shirts/" + buffered_data.substring(buffered_data.indexOf("<img ") + 21, buffered_data.indexOf("<img ") + 34);
       
       //add acquired data to an array
-      data.push(title, price, img_url, url, time, "\n");
+      data.push([title, price, img_url, url, time]);
       
       //helpful console logs, that were used in the process.
       
